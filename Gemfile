@@ -7,6 +7,7 @@ gem "pg"
 gem "puma"
 gem "bcrypt"
 gem "jwt"
+gem 'bootsnap'
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
