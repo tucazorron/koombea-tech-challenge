@@ -4,6 +4,11 @@
 
 Artur Zorron
 
+## To run
+
+- Run `rails s` in the terminal
+- Use Postman or Insomnia to test the API
+
 ## User stories
 
 ### As a user, I must be able to log into the system using an email and a password.
@@ -45,7 +50,7 @@ Artur Zorron
 {
     "type": "request",
     "request": {
-        "url": "http://localhost:3000/signup",
+        "url": "http://localhost:3000/register",
         "method": "POST",
         "headers": {
             "Content-Type": "application/json"
