@@ -4,57 +4,80 @@
 
 Artur Zorron
 
-## Description
-
-System to upload and analyse CSV files with contacts data.
-
 ## User stories
 
----
+### As a user, I must be able to log into the system using an email and a password.
 
-1. As a user, I must be able to log into the system using an email and a password.
+- Request:
 
-- With your account created, you can log in to the system.
+```json
+{
+    "type": "request",
+    "request": {
+        "url": "http://localhost:3000/login",
+        "method": "POST",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "body": {
+            "email": "artur.zorron@email.com",
+            "password": "senha#123"
+        }
+    }
+}
+```
 
-- Route: 
+- Response:
 
----
+```json
+{
+	"token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NTU1OTM0MTJ9.WaY_7rsGAr_KOlXXgTWn0gFlenCWQV7t580VdG8lvhw",
+	"exp": "06-18-2022 20:03",
+	"id": 1
+}
+```
 
-2. As a user, I must be able to register on the platform. For this, it will only be necessary to enter a username and password.
+### As a user, I must be able to register on the platform.
 
----
+- Request:
 
-3. As a user, I must be able to upload a CSV file for processing. At the time of uploading the file, the user must choose which column belongs to which specific contact information, i.e. the user must match the columns of the file with the information to be processed and then save it into the database. This means that in the CSVs the columns with information will not be standard and may arrive in a different order or with different names than the ones that will be used in the database.
+```json
+{
+    "type": "request",
+    "request": {
+        "url": "http://localhost:3000/signup",
+        "method": "POST",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "body": {
+            "email": "artur.zorron@email.com",
+            "password": "senha#123"
+        }
+    }
+}
+```
 
----
+- Response:
 
-4. The following values must be saved in the database:
-    - Name
-    - Date of Birth
-    - Phone
-    - Address
-    - Credit Card
-    - Credit Card Network
-    - Email
+```json
+{
+    "id": 1,
+	"email": "artur.zorron@email.com",
+	"password_digest": "$2a$12$BwNdb9qc1igmIYJKFHG6G.Wd0.1On.6QF2CFAzNNnn5Hfb.CngG1u",
+	"created_at": "2022-06-18T00:04:12.204Z",
+	"updated_at": "2022-06-18T00:04:12.204Z"
+}
+```
 
----
+### As a user, I must be able to upload a CSV file for processing.
 
-5. As a system, I must process the content of the CSV file.
+### As a system, I must process the content of the CSV file.
 
----
+### As a user, I should be able to see a summary of the contacts I have imported.
 
-6. As a user, I should be able to see a summary of the contacts I have imported. All contacts that I have imported and that were successfully created should be displayed in a list that is paginated.
+### As a user, I should be able to see a log of the contacts that could not be imported and the error associated with it.
 
----
+### As a user, I should be able to see a list of imported files with their respective status.
 
-7. As a user, I should be able to see a log of the contacts that could not be imported and the error associated with it.
-
----
-
-8. As a user, I should be able to see a list of imported files with their respective status. Valid statuses include: On Hold, Processing, Failed, Terminated.
-
----
-
-9. BONUS: Process the CSV file in a background job.
-
----
+### BONUS: Process the CSV file in a background job.
