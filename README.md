@@ -77,12 +77,24 @@ Artur Zorron
 
 ### As a user, I must be able to upload a CSV file for processing.
 
+Wasn't able to implement this feature.
+
 ### As a system, I must process the content of the CSV file.
+
+Wasn't able to implement this feature.
 
 ### As a user, I should be able to see a summary of the contacts I have imported.
 
+Wasn't able to implement this feature.
+
 ### As a user, I should be able to see a log of the contacts that could not be imported and the error associated with it.
+
+Wasn't able to implement this feature.
 
 ### As a user, I should be able to see a list of imported files with their respective status.
 
+Wasn't able to implement this feature.
+
 ### BONUS: Process the CSV file in a background job.
+
+Wasn't able to implement this feature.
